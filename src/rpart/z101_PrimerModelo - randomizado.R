@@ -12,7 +12,7 @@ setwd("C:/Users/I866796/Desktop/Jessica/ITBA/Mineria de Datos/Trabajos/TareasHog
 # cargo el dataset
 dataset <- fread("./datasets/dataset_pequeno.csv")
 
-dtrain <- dataset[foto_mes == 202107] # defino donde voy a entrenar
+dtrain <- dataset[foto_mes == 202107 ,clase_ternaria:=sample(clase_ternaria)] # defino donde voy a entrenar
 dapply <- dataset[foto_mes == 202109] # defino donde voy a aplicar el modelo
 
 # genero el modelo,  aqui se construye el arbol
@@ -56,11 +56,11 @@ dapply[, Predicted := as.numeric(prob_baja2 > 1 / 40)]
 # genero el archivo para Kaggle
 # primero creo la carpeta donde va el experimento
 dir.create("./exp/")
-dir.create("./exp/KA200100")
+dir.create("./exp/KA22")
 
 # solo los campos para Kaggle
 fwrite(dapply[, list(numero_de_cliente, Predicted)],
-        file = "./exp/KA200100/K101_0100.csv",
+        file = "./exp/KA22/K101_0100.csv",
         sep = ","
 )
 
