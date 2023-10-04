@@ -13,7 +13,7 @@ options(error = function() {
 source("~/dm2023b/src/workflow-experimentos/e611_CA_reparar_dataset.r")
 source("~/dm2023b/src/workflow-experimentos/e621_DR_corregir_drifting.r")
 source("~/dm2023b/src/workflow-experimentos/e631_FE_historia.r")
-source("~/dm2023b/src/workflow-experimentos/641_TS_training_strategy.r")
+source("~/dm2023b/src/workflow-experimentos/e641_TS_training_strategy.r")
 
 # ultimos pasos, muy lentos
 source("~/dm2023b/src/workflow-experimentos/e651_HT_lightgbm.r")
