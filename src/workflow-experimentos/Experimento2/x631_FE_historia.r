@@ -591,20 +591,20 @@ if (PARAM$Tendencias2$run) {
 #------------------------------------------------------------------------------
 # Agrego variables a partir de las hojas de un Random Forest
 # 
-# if (PARAM$RandomForest$run) {
-#   OUTPUT$AgregaVarRandomForest$ncol_antes <- ncol(dataset)
-#   AgregaVarRandomForest(
-#     num.trees = PARAM$RandomForest$num.trees,
-#     max.depth = PARAM$RandomForest$max.depth,
-#     min.node.size = PARAM$RandomForest$min.node.size,
-#     mtry = PARAM$RandomForest$mtry,
-#     semilla = PARAM$RandomForest$semilla
-#   )
-# 
-#   OUTPUT$AgregaVarRandomForest$ncol_despues <- ncol(dataset)
-#   GrabarOutput()
-#   gc()
-# }
+ if (PARAM$RandomForest$run) {
+   OUTPUT$AgregaVarRandomForest$ncol_antes <- ncol(dataset)
+   AgregaVarRandomForest(
+     num.trees = PARAM$RandomForest$num.trees,
+     max.depth = PARAM$RandomForest$max.depth,
+     min.node.size = PARAM$RandomForest$min.node.size,
+     mtry = PARAM$RandomForest$mtry,
+     semilla = PARAM$RandomForest$semilla
+   )
+ 
+   OUTPUT$AgregaVarRandomForest$ncol_despues <- ncol(dataset)
+   GrabarOutput()
+   gc()
+ }
 
 
 #--------------------------------------------------------------------------
